@@ -1,0 +1,24 @@
+# Darnit configuration file
+# See: https://github.com/kusari-oss/darnit
+
+version = "1.0"
+extends = "openssf-baseline"
+
+[settings]
+cache_results = true
+timeout = 300
+
+# Adapter definitions (uncomment to use external tools)
+# [adapters.kusari]
+# type = "command"
+# command = "kusari"
+# output_format = "json"
+
+# Control overrides
+# [controls."CONTROL-ID"]
+# status = "n/a"
+# reason = "Pre-release project"
+
+# Use custom adapter for specific controls
+# [controls."CONTROL-ID"]
+# check = { adapter = "kusari" }
