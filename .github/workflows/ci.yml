@@ -9,8 +9,7 @@ on:
     paths-ignore:
       - "docs/*"
       - "**.md"
-permissions:
-  contents: read
+permissions: read-all
 jobs:
   test:
     strategy:
