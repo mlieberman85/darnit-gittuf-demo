@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
         persist-credentials: false
     - name: Install Go
-      uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c
+      uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
       with:
         go-version: 1.26
         cache: true
@@ -28,6 +28,6 @@ jobs:
         go test -covermode=atomic -coverprofile='unfiltered_coverage.cov' `go list ./... | grep -v -f .test_ignore.txt`
         grep -v -f .test_ignore.txt unfiltered_coverage.cov > coverage.cov
     - name: Coveralls Parallel
-      uses: coverallsapp/github-action@5cbfd81b66ca5d10c19b062c04de0199c215fb6e
+      uses: coverallsapp/github-action@8d6379e14d29928660c4ba802d8e85393440b329
       with:
         file: 'coverage.cov'
